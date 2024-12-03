@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Addtask({ Addtask }) {
+function AddTask({ addTask }) {
   const [task, setTask] = useState("");
-  const handleSubmit = (e) =>{
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (task.trim()) {
-      Addtask(task);
+      addTask(task);
       setTask("");
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -17,8 +19,9 @@ function Addtask({ Addtask }) {
         onChange={(e) => setTask(e.target.value)}
         placeholder="Add a new task"
       />
+      <button type="submit">Add</button>
     </form>
   );
 }
 
-export default Addtask;
+export default AddTask;

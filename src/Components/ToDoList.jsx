@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./ToDoItem";
-function ToDoList() {
-  function Todolist({ task, toggleTask, deleteTask }) {}
+
+function ToDoList({ tasks, toggleTask, deleteTask }) {
   return (
     <ul>
       {tasks.map((task, index) => (
